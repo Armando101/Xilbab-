@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
   declarations: [FooterComponent, HeaderComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [FooterComponent, HeaderComponent]
 })
 export class SharedModule { }
