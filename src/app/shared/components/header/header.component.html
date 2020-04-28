@@ -1,1 +1,9 @@
-<p>header works!</p>
+<header>
+	<a (click)="toggleButton()" class="button" [routerLink]="['/home']">{{ titleButton }}</a>
+	<div class="header_pais">
+		<label for="">País</label><input type="text">
+	</div>
+	<div class="header_fecha">
+		<label for="">Fecha</label><input type="date" min="2019-11-01" [value]="dateControl">
+	</div>
+</header>

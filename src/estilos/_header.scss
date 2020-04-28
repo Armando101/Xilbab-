@@ -1,0 +1,84 @@
+header {
+	background-color: $primary_brand;
+	box-shadow: 1px 1px 5px gray;
+	height: 50px;
+	padding: 10px;
+	color: white;
+	font-size: 19px;
+	display: grid;
+	grid-template-columns: 20% 40% 40%;
+}
+.button {
+	width: 100%;
+	margin-left: 30px;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding-top: 10px;
+	font-weight: 600;
+	text-align: center;
+	cursor: pointer;
+	background-color: $primary_action;
+}
+.button:hover {
+	background-color: $secondary_action;
+}
+
+.header_pais {
+	display: flex;
+	justify-content: center;
+}
+.header_pais, .header_fecha {
+	margin-top: 10px;
+}
+
+.header_pais label, .header_fecha label {
+	margin-right: 12px;
+}
+
+.header_pais input, .header_fecha input {
+	height: 25px;
+	border: 1px solid gray;
+	border-radius: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 50%;
+}
+
+.header_fecha input {
+	padding-left: 10px; 
+}
+
+@media screen and (max-width: 880px) {
+	.button {
+		margin-left: 0px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	header {
+		height: 90px;
+		grid-template-columns: 20% 80%;
+		grid-template-areas: "boton paises"
+								"boton fecha"
+	}
+
+	.button {
+		height: 40%;
+		align-self: center;
+		grid-area: boton;
+	}
+
+	.header_pais {
+		grid-area: paises;
+	}
+
+	.header_fecha {
+		display: flex;
+		grid-area: fecha;
+		justify-content: center;
+	}
+
+	.header_pais input, .header_fecha input {
+		width: 60%;	
+	}
+}
