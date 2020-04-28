@@ -1,0 +1,32 @@
+footer {
+	display: block;
+	background-color: $secondary_brand;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+footer ul {
+	list-style: none;
+}
+
+footer ul li {
+	display: inline;
+	margin-right: 10px;
+}
+
+footer a {
+	font-size: 19px;
+	font-weight: 500;
+	color: black;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+footer p {
+	margin-left: 40px;
+}
+
+footer a:hover {
+	text-decoration: underline;
+	color: $primary_action;
+}
