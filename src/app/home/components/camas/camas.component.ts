@@ -10,6 +10,9 @@ export class CamasComponent implements OnInit {
 
 	@Input() camas: Camas[];
 
+	public highlight_camas;
+	public highlight_medidas;
+
   constructor() { }
 
   ngOnInit(): void {

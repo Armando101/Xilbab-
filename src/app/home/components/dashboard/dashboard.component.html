@@ -1,11 +1,11 @@
 <div class="dashboard">
-	<div class="dashboard__cards">
+	<div class="dashboard__cards" [ngClass] = "{'highlight-cards': highlight_camas }">
 		<h2>Disponibliidad de camas</h2>
 		<hr>
 		<br>
 		<app-camas [camas]="camas"></app-camas>
 	</div>
-	<div class="dashboard__cards">
+	<div class="dashboard__cards" [ngClass]="{ 'highlight-cards': !highlight_camas}">
 		<h2>Medidas tomadas en diferentes países</h2>
 		<hr>
 		<br>

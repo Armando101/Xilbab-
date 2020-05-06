@@ -1,5 +1,5 @@
 <header>
-	<a (click)="toggleButton()" class="button" [routerLink]="['/home']">{{ titleButton }}</a>
+	<a (click)="toggleButton($event)" class="button" [routerLink]="['/home']">{{ titleButton }}</a>
 	<div class="header_pais">
 		<label for="">País</label><input type="text">
 	</div>

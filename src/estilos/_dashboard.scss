@@ -10,8 +10,9 @@
 .dashboard__cards, .dashboard__cards--medidas_camas {
 	border: 2px solid $secondary_brand;
 	padding: 10px 30px;
-	box-shadow: 1px 1px 5px gray;
+	box-shadow: 5px 5px 10px gray;
 	background-color: $primary_background;
+	border-radius: 30px;
 }
 
 .dashboard__cards--medidas_camas {
@@ -34,6 +35,9 @@
 	grid-template-columns: 20% 80%;
 	height: 100px;
 	border-bottom: 1px solid $primary_brand;
+}
+.highlight-cards {
+	border: 3px solid $primary_action;
 }
 
 @media screen and (max-width: 1116px) {
