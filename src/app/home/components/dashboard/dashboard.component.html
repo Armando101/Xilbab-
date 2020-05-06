@@ -1,1 +1,17 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+	<div class="dashboard__cards">
+		<h2>Disponibliidad de camas</h2>
+		<hr>
+		<br>
+		<app-camas [camas]="camas"></app-camas>
+	</div>
+	<div class="dashboard__cards">
+		<h2>Medidas tomadas en diferentes países</h2>
+		<hr>
+		<br>
+		<app-medidas [medidas]="medidas"></app-medidas>
+	</div>
+	<div class="dashboard__cards--medidas_camas">
+		<app-medidas-camas [medidas]="medidas" [camas]="camas"></app-medidas-camas>
+	</div>
+</div>

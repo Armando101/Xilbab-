@@ -1,0 +1,59 @@
+.dashboard {
+	margin: 20px 20px;
+	// padding: 10px 30px;
+	display: grid;
+	grid-template-columns: 47.5% 47.5%;
+	grid-gap: 30px;
+//	border: 1px solid $primary_brand;
+}
+
+.dashboard__cards, .dashboard__cards--medidas_camas {
+	border: 2px solid $secondary_brand;
+	padding: 10px 30px;
+	box-shadow: 1px 1px 5px gray;
+	background-color: $primary_background;
+}
+
+.dashboard__cards--medidas_camas {
+	display: none;
+}
+
+.camas__container {
+	display: flex;
+	justify-content: space-around;
+	height: 50px;
+	border-bottom: 1px solid $primary_brand;
+}
+
+.camas__container .camas__country, .medidas__country {
+	font-weight: 600;
+}
+
+.medidas__container {
+	display: grid;
+	grid-template-columns: 20% 80%;
+	height: 100px;
+	border-bottom: 1px solid $primary_brand;
+}
+
+@media screen and (max-width: 1116px) {
+	.dashboard__cards {
+		display: none;
+	}
+	.dashboard {
+		grid-template-columns: 100%;
+	}
+	.dashboard__cards--medidas_camas {
+		display: flex;
+		padding: 50px 20px;
+		padding-top: 10px; 
+	}
+
+	.medidas-camas {
+		display: grid;
+	}
+
+	.medidas-camas__pais {
+		font-weight: 600;
+	}
+}
