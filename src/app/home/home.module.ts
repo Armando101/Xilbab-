@@ -7,12 +7,11 @@ import { CamasComponent } from './components/camas/camas.component';
 import { MedidasComponent } from './components/medidas/medidas.component';
 import { MedidasCamasComponent } from './components/medidas-camas/medidas-camas.component';
 
-
-
 @NgModule({
   declarations: [DashboardComponent, CamasComponent, MedidasComponent, MedidasCamasComponent],
   imports: [
     CommonModule, HomeRoutingModule, SharedModule
-  ]
+  ],
+  exports: [DashboardComponent]
 })
 export class HomeModule { }

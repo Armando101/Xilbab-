@@ -1,14 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Medidas } from '../models/medidas';
+import { Subject } from 'rxjs';
 
 
 @Injectable()
 export class MedidasService {
 
-	public medidas: Medidas[];
+	public totalMedidas: Medidas[];
+	public searchMedidas = [];
+
+	public set_medidas = new Subject<any>();
+	
+	// Variable auxiliar que permitirá que los componentes se subscriban
+	enviarDataObservable = this.set_medidas.asObservable();
+
 
 	constructor() {
-		this.medidas = [
+		this.totalMedidas = [
 
 			new Medidas("México", 'government announced that all universities will close their classes at the latest by 16 March.'),
 			new Medidas("Colombia", 'All schools, nurseries and colleges closed.'),
@@ -22,23 +30,34 @@ export class MedidasService {
 			new Medidas("Guatemala", 'Ministry of Education- provide e-learning resources to students for free so students can preview contents before the semester begins '),
 			new Medidas("Chile", 'KCDC announced national disinfecting strategy in public spaces to damage minimisation. '),
 			new Medidas("Venezuela", 'Avoid activities in confined space, call for non-essential event restriction in churches '),
-			new Medidas("México", 'All medical staffs must wear individual protection gear or full-bodie gear for examinations '),
-			new Medidas("Colombia", 'Limit all church activities and self-isolate first if you exhibit any slight symptom and contact the hospital '),
-			new Medidas("Argentina", 'Limit outdoor activity and interstate visit and follow self-isolation protocols '),
-			new Medidas("Uruguay", 'fast rate of transmission confirmed in the region- isolate first then conduct test '),
-			new Medidas("Panamá", 'Asiade Age care facility in Busan- cohort isolation after one social worker resulted positive '),
-			new Medidas("Nicaragua", 'patients in Chungdo Dae-nam Hospital received positive- cohort isolation '),
-			new Medidas("Brasil", 'Government asked to self-isolate whoever attended services by Shin-Cheon-ji (cult church) in Korea and Cheongdo-Daenam Hospital (currently found 49 people) '),
-			new Medidas("España", 'Authorise medical professional to test any patient who hasn\'t been to overseas but exhibit symptoms'),
-			new Medidas("Honduras", 'Extended regional and local triage check-up centre for Covid '),
-			new Medidas("Guatemala", 'First possible case in South Korea announced, Chinese woman travelling from Wuhan who worked near Seoul'),
-			new Medidas("Chile", 'All short-term visitors banned'),
-			new Medidas("Venezuela", 'Israel suspended all flights from China.'),
+			new Medidas("Belice", 'All medical staffs must wear individual protection gear or full-bodie gear for examinations '),
+			new Medidas("Cuba", 'Limit all church activities and self-isolate first if you exhibit any slight symptom and contact the hospital '),
+			new Medidas("Ecuador", 'Limit outdoor activity and interstate visit and follow self-isolation protocols '),
+			new Medidas("Perú", 'fast rate of transmission confirmed in the region- isolate first then conduct test '),
+			new Medidas("Estados Unidos", 'Asiade Age care facility in Busan- cohort isolation after one social worker resulted positive '),
+			new Medidas("Francia", 'patients in Chungdo Dae-nam Hospital received positive- cohort isolation '),
+			new Medidas("Italia", 'Government asked to self-isolate whoever attended services by Shin-Cheon-ji (cult church) in Korea and Cheongdo-Daenam Hospital (currently found 49 people) '),
+			new Medidas("Rusia", 'Authorise medical professional to test any patient who hasn\'t been to overseas but exhibit symptoms'),
+			new Medidas("Japón", 'Extended regional and local triage check-up centre for Covid '),
+			new Medidas("China", 'First possible case in South Korea announced, Chinese woman travelling from Wuhan who worked near Seoul'),
+			new Medidas("Corea", 'All short-term visitors banned'),
+			new Medidas("Serbia", 'Israel suspended all flights from China.'),
 		];
 	}
 
+	setMedidas(Pais) {
+		this.searchMedidas = [];
+		this.totalMedidas
+			.filter(country => country.code_country.toLowerCase().includes(Pais.toLowerCase()))
+			.map(countryObj => this.searchMedidas.push(countryObj));
+	
+		this.set_medidas.next(Pais);
+	}
+
 	getMedidas() {
-		console.log(this.medidas);
-		return this.medidas;
+		if (this.searchMedidas.length==0) {
+			return this.totalMedidas;
+		}
+		return this.searchMedidas;
 	}
 }

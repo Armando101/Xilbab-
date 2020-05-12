@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { format, compareAsc } from 'date-fns'
 
 import { HighlightService } from '../../../home/services/highlight.service';
+import { CamasService } from '../../../home/services/camas.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  providers: [HighlightService]
+  providers: [HighlightService, CamasService]
 })
 export class HeaderComponent implements OnInit {
 
@@ -16,10 +17,18 @@ export class HeaderComponent implements OnInit {
 	dateControl = format(new Date(), 'yyyy-MM-dd');
 
 	constructor(
-    private _highlight: HighlightService
+    private _highlight: HighlightService,
+    private _camasService: CamasService
   ) { }
 
   ngOnInit(): void {
+    this._camasService.enviarDataObservable.subscribe(response => {
+      console.log('Servicio desde el header')
+    });
+  }
+
+  busquedaPaises(Pais) {
+    this._camasService.setCamas(Pais);
   }
 
   toggleButton(event) {

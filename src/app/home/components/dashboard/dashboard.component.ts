@@ -32,11 +32,19 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._highlight.enviarDataObservable.subscribe(response => {
-      this.highlight_camas = response;
-      console.log(this._highlight.data);
+    this._camasService.enviarDataObservable.subscribe(response => {
+      console.log('Servicio desde el dashbord')
+      this.camas = this._camasService.getCamas();
+    });
+    this._medidasService.enviarDataObservable.subscribe(response => {
+      console.log('Servicio desde el dashbord')
+      this.medidas = this._medidasService.getMedidas();
     });
   	console.log('Dashboard iniciado');
   }
 
+  busquedaPaises(Pais) {
+    this._camasService.setCamas(Pais);
+    this._medidasService.setMedidas(Pais);
+  }
 }
