@@ -49,6 +49,7 @@ export class MedidasService {
 		this.searchMedidas = [];
 		this.totalMedidas
 			.filter(country => country.code_country.toLowerCase().includes(Pais.toLowerCase()))
+			.sort((a, b) => a.code_country.localeCompare(b.code_country))
 			.map(countryObj => this.searchMedidas.push(countryObj));
 	
 		this.set_medidas.next(Pais);

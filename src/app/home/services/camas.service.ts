@@ -64,9 +64,12 @@ export class CamasService {
 		this.searchCamas = [];
 		this.totalCamas
 			.filter(country => country.code_country.toLowerCase().includes(Pais.toLowerCase()))
+			.sort((a, b) => a.code_country.localeCompare(b.code_country))
 			.map(countryObj => this.searchCamas.push(countryObj));
 	
-		// console.log(this.searchCamas);
+		if (this.searchCamas.length == 0) {
+			throw new Error("Not found");
+		}
 		this.set_camas.next(Pais);
 	}
 

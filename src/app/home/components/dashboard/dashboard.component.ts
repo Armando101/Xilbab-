@@ -19,7 +19,8 @@ export class DashboardComponent implements OnInit {
 
 	public camas: Camas[];
 	public medidas: Medidas[];
-   
+  
+  public notFoundMessage: boolean;
   public highlight_camas;
 
   constructor(
@@ -44,7 +45,12 @@ export class DashboardComponent implements OnInit {
   }
 
   busquedaPaises(Pais) {
-    this._camasService.setCamas(Pais);
-    this._medidasService.setMedidas(Pais);
+    try {  
+      this._camasService.setCamas(Pais);
+      this._medidasService.setMedidas(Pais);
+      this.notFoundMessage = false;
+    } catch (error) {
+      this.notFoundMessage = true;
+    }
   }
 }
