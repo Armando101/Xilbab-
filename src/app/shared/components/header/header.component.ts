@@ -26,13 +26,15 @@ export class HeaderComponent implements OnInit {
   ) {
       this.searchControl.valueChanges
       .pipe(
+        /*
         debounceTime(300),
         filter((value: string) => {
           return value.length >= 3;
         }),
-        /*map((value: string) => {
+        map((value: string) => {
           return value.toLowerCase();
-        })*/
+        })
+        */
       )
       .subscribe(Pais => {   
           this._camasService.setCamas(Pais);

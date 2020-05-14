@@ -9,9 +9,7 @@ import { Camas } from '../../models/camas';
 export class CamasComponent implements OnInit {
 
 	@Input() camas: Camas[];
-
-	public highlight_camas;
-	public highlight_medidas;
+	@Input() characters: any[];
 
   constructor() { }
 
