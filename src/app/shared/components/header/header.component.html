@@ -1,7 +1,7 @@
 <header>
 	<a (click)="toggleButton($event)" class="button" [routerLink]="['/home']">{{ titleButton }}</a>
 	<div class="header_pais">
-		<label for="">País</label><input (input)="busquedaPaises($event.target.value)" type="text">
+		<label for="">País</label><input [formControl] = "searchControl" type="text">
 	</div>
 	<div class="header_fecha">
 		<label for="">Fecha</label><input type="date" min="2019-11-01" [value]="dateControl">

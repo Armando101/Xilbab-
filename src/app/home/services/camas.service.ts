@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Camas } from '../models/camas';
-import { Subject } from 'rxjs';
 
 
 @Injectable({
@@ -10,10 +10,9 @@ export class CamasService {
 
 	public totalCamas: Camas[];
 	public searchCamas = [];
-	public set_camas = new Subject<any>();
-	
+	public set_camas = new BehaviorSubject<boolean>(false);
+	public url: string;
 	// Variable auxiliar que permitirá que los componentes se subscriban
-	enviarDataObservable = this.set_camas.asObservable();
 
 	constructor() {
 		this.totalCamas = [
@@ -56,9 +55,14 @@ export class CamasService {
 			new Camas("Serbia", 150),
 		];
 
+
 	}
 
-	setCamas(Pais) {
+	getObservable() {
+		return this.set_camas.asObservable();
+	}
+
+	setCamas(Pais: string ) {
 		// console.log(Pais);
 		// console.log(this.totalCamas[0]);
 		this.searchCamas = [];
@@ -66,11 +70,14 @@ export class CamasService {
 			.filter(country => country.code_country.toLowerCase().includes(Pais.toLowerCase()))
 			.sort((a, b) => a.code_country.localeCompare(b.code_country))
 			.map(countryObj => this.searchCamas.push(countryObj));
-	
+		
+		console.log(this.searchCamas);
+
 		if (this.searchCamas.length == 0) {
-			throw new Error("Not found");
+			// throw new Error("Not found");
+			return this.set_camas.next(true);
 		}
-		this.set_camas.next(Pais);
+		return this.set_camas.next(false);
 	}
 
 	getCamas() {

@@ -3,8 +3,7 @@
 	// padding: 10px 30px;
 	display: grid;
 	grid-template-columns: 47.5% 47.5%;
-	grid-template-areas:"textInput textInput" 
-						"notFoundMessage notFoundMessage" 
+	grid-template-areas: "notFoundMessage notFoundMessage" 
 						"card-bed card-measure";
 	grid-gap: 30px;
 //	border: 1px solid $primary_brand;

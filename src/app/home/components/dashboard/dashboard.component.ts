@@ -13,7 +13,6 @@ import { HighlightService } from '../../services/highlight.service';
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  providers: [CamasService, MedidasService, HighlightService]
 })
 export class DashboardComponent implements OnInit {
 
@@ -33,24 +32,19 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._camasService.enviarDataObservable.subscribe(response => {
-      console.log('Servicio desde el dashbord')
+    this._camasService.getObservable().subscribe(response => {
+      this.notFoundMessage = response;
       this.camas = this._camasService.getCamas();
     });
-    this._medidasService.enviarDataObservable.subscribe(response => {
-      console.log('Servicio desde el dashbord')
+
+    this._medidasService.getObservable().subscribe(response => {
       this.medidas = this._medidasService.getMedidas();
     });
-  	console.log('Dashboard iniciado');
-  }
+     
+    this._highlight.getObservable().subscribe(response => {
+      this.highlight_camas = response;
+    });
 
-  busquedaPaises(Pais) {
-    try {  
-      this._camasService.setCamas(Pais);
-      this._medidasService.setMedidas(Pais);
-      this.notFoundMessage = false;
-    } catch (error) {
-      this.notFoundMessage = true;
-    }
+  	console.log('Dashboard iniciado');
   }
 }

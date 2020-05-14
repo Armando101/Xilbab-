@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class HighlightService {
 
-	public data = false;
-	public highlight_camas = new Subject<boolean>();
+	public highlight_camas$ = new BehaviorSubject<boolean>(false);
 	
-	// Variable auxiliar que permitirá que los componentes se subscriban
-	enviarDataObservable = this.highlight_camas.asObservable();
+	getObservable() {
+		return this.highlight_camas$.asObservable();
+	}
 
 	enviarData(data: boolean) {
-		this.data = data;
-		this.highlight_camas.next(data);
+		this.highlight_camas$.next(data);
 	}
 
 }
