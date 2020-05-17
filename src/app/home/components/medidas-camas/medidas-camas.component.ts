@@ -16,9 +16,8 @@ export class MedidasCamasComponent implements OnInit {
 	// public medida = this.medidas[0];
 	//public cama = this.camas[0];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

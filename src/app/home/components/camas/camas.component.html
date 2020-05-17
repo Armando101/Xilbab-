@@ -1,11 +1,6 @@
 <div class="Camas">
 	<div  class="camas__container" *ngFor="let cama of camas">
-		<span class="camas__country" >{{cama.code_country}}</span>
-		<span class="camas__amount">{{cama.amount}}</span>
-	</div>
-
-	<div  class="camas__container" *ngFor="let character of characters">
-		<span class="camas__country" >{{character.code}}</span>
-		<span class="camas__amount">{{character.bedsTotal}}</span>
+		<span class="camas__country" >{{ (cama.code | uppercase ) | codeCountry }}</span>
+		<span class="camas__amount">{{cama.bedsTotal | number:'1.0-2'}}</span>
 	</div>
 </div>
