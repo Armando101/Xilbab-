@@ -26,8 +26,8 @@ export class HeaderComponent implements OnInit {
   ) {
       this.searchControl.valueChanges
       .pipe(
-        debounceTime(300),
         /*
+        debounceTime(300),
         filter((value: string) => {
           return value.length >= 3;
         }),

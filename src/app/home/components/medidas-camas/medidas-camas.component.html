@@ -1,8 +1,9 @@
 <div class="Medidas">
-	<div class="medidas-camas">
-		<h2>{{camas[0].code_country}}</h2>
-		<span>{{camas[0].amount}} camas</span>
+	<div class="medidas-camas" *ngFor="let cama of camas">
+		<h2>{{ ( cama.code | uppercase ) | codeCountry }}</h2>
+		<span>{{cama.bedsTotal| number:'1.0-2'}} camas</span>
 		<h2>Medidas</h2>
 		{{medidas[0].measure}}
+		<hr>
 	</div>
 </div>

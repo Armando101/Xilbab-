@@ -15,7 +15,7 @@ import { GraphQLModule } from './graphql.module';
   declarations: [
     AppComponent,
     LayoutComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
