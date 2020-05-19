@@ -1,10 +1,10 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MapaComponent } from './components/mapa/mapa.component';
 
 const route: Routes = [{
     path: '',
-    component: DashboardComponent
+    component: MapaComponent
 }];
 
 @NgModule({
@@ -15,6 +15,6 @@ const route: Routes = [{
 })
 
 
-export class HomeRoutingModule {
+export class DashboardMapRoutingModule {
 
 }

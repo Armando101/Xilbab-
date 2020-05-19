@@ -1,0 +1,17 @@
+body {
+	background-color: $primary_background;
+}
+
+.mapa-container {
+	display: grid;
+	grid-template-columns: 30% 70%;
+	grid-template-areas: "sidebar mapa"
+}
+
+.sidebar {
+	grid-area: sidebar;
+}
+
+google-map {
+	grid-area: mapa;
+}

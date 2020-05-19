@@ -8,9 +8,10 @@ const routes: Routes = [
   {
     path: '', component: LayoutComponent, children: [
       { path: '', redirectTo: '/home', pathMatch: 'full' },
-      { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) }
+      { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
     ]
   },
+  { path: 'mapa', loadChildren: () => import('./map-dashboard/map-dashboard.module').then(m => m.MapDashboardModule) },
   { path: '**', component: PageNotFoundComponent }
 ];
 
