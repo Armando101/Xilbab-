@@ -5,9 +5,10 @@ import { DashboardMapRoutingModule } from './map-dashboard-routing.module';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MarcadorComponent } from './components/marcador/marcador.component';
 import { CodeCountryPipe } from './pipe/code-country.pipe';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
-  declarations: [MapaComponent, MarcadorComponent, CodeCountryPipe],
+  declarations: [MapaComponent, MarcadorComponent, CodeCountryPipe, SidebarComponent],
   imports: [
     CommonModule,
     DashboardMapRoutingModule,

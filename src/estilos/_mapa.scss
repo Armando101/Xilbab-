@@ -15,3 +15,41 @@ body {
 google-map {
 	grid-area: mapa;
 }
+
+.sidebar__content {
+	padding: 10%;	
+}
+
+.sidebar__content__main span {
+	font-weight: 600;
+	font-size: 19px;
+}
+
+.sidebar__content__main p {
+	margin-bottom: 10%;
+}
+
+@media screen and (max-width: 850px) {
+	.mapa-container {
+		grid-template-columns: 100%;
+		grid-template-areas: "sidebar" "mapa"
+	}
+
+	.sidebar__content {
+		padding-top: 1%;
+		padding-bottom: 1%;
+		
+	}
+
+	.sidebar__content__main {
+		display: flex;
+	}
+
+	.sidebar__content__main p {
+		margin-right: 10%;
+	}
+
+	.sidebar {
+		display: none;
+	}
+}

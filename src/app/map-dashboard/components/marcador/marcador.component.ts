@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import {MapInfoWindow, MapMarker} from '@angular/google-maps';
+import { InformationService } from '../../services/information.service';
 
 @Component({
   selector: 'app-marcador',
@@ -12,7 +13,7 @@ export class MarcadorComponent implements OnInit {
 	@Input() markerPositions: any;
 
   constructor(
-  	
+  	private _informationService: InformationService
   ) { }
 
   ngOnInit(): void {
@@ -21,6 +22,8 @@ export class MarcadorComponent implements OnInit {
 
   openInfoWindow(marker: MapMarker) {
   	this.infoWindow.open(marker);
+  	this._informationService.enviarData(this.markerPositions);
+  	// console.log(this.markerPositions)
   }
 
 }

@@ -12,8 +12,7 @@ export class CamasService {
 	public searchCamas = [];
 	public set_camas = new BehaviorSubject<boolean>(false);
 	public url: string;
-	// Variable auxiliar que permitirá que los componentes se subscriban
-
+	
 	constructor() {
 		this.totalCamas = [];
 	}

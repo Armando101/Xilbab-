@@ -1,0 +1,18 @@
+<div class="sidebar__content" *ngIf="code">
+
+	<h1>{{ (code | uppercase) | codeCountry }}</h1>
+	
+	<div class="sidebar__content__main">
+		<p><span>Población:</span> {{ populationAverage | number:'1.0-2' }} </p>
+		<p><span>Total de camas:</span> {{ bedsTotal | number:'1.0-2' }} </p>
+	</div>
+	<div class="sidebar__content__main">
+		<p><span>Promedio de camas:</span> {{ bedsAverage | number:'1.0-2' }} </p>
+		<p><span>Total de camas estimadas:</span> {{ estimatedBedsTotal | number:'1.0-2' }} </p> 
+		<p><span>Promedio de camas estimadas:</span> {{ estimatedBedsAverage | number:'1.0-2' }} </p>
+	</div>	
+</div>
+
+<div class="sidebar__content" *ngIf="!code">
+	<h1>Seleccione un país</h1>
+</div>

@@ -257,6 +257,9 @@ export class CodeCountryPipe implements PipeTransform {
 	];
 
 	transform(value: string): string {
+		if (!value) {
+			return '';
+		}
 		return this.codes.find(element => element[1]==value)[0];
 	}
 }

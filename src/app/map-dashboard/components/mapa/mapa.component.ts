@@ -21,6 +21,32 @@ export class MapaComponent implements OnInit {
   	lat: 0,
   	lng: 0
   }
+
+  public options = {
+  	zoom:3,
+  	styles: [
+  {
+    "featureType": "all",
+    "stylers": [
+      { "color": "#C0C0C0" }
+    ]
+  },{
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [
+      { "color": "#CCFFFF" }
+    ]
+  },{
+    "featureType": "landscape",
+    "elementType": "labels",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  }
+]
+
+  }
+
   constructor(
   	private _apollo: Apollo
   ) { 
@@ -32,18 +58,21 @@ export class MapaComponent implements OnInit {
       query: gql `
         {
           getCountrys{
-            lat
-            lng
-            bedsTotal
             code
-            populationAverage
+				    lat
+				    lng
+				    bedsTotal
+				    bedsAverage
+				    populationAverage
+				    estimatedBedsTotal
+				    estimatedBedsAverage
           }
         }
       `,
     })
     .valueChanges.subscribe(({data}) => {
     	this.markerPositions = data.getCountrys;
-    	console.log(this.markerPositions);
+    	// console.log(this.markerPositions);
   	});
   }
 

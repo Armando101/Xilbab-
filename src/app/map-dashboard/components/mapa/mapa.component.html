@@ -4,12 +4,14 @@
 
 <div class="mapa-container">
 	<div class="sidebar">
-		
+		<app-sidebar></app-sidebar>
 	</div>
-	<google-map width="100%" 
-				height="800px"
+	<google-map 
+				[options]="options"
+				width="100%" 
+				height="100vh"
 				[center]="position"
-				[zoom]="zoom">
+				>
 				<div *ngFor="let marker of markerPositions" >
 					<app-marcador [markerPositions]="marker"></app-marcador>			
 				</div>
