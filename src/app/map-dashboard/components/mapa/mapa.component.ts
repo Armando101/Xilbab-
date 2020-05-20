@@ -10,6 +10,7 @@ import gql from 'graphql-tag';
 })
 export class MapaComponent implements OnInit {
 
+  public show: boolean = false;
 	public title = 'My first map';
 	public zoom = 3;
 	public center = {lat: 24, lng: 12};
@@ -76,5 +77,13 @@ export class MapaComponent implements OnInit {
   	});
   }
 
+  showMap() {
+    if (this.show) {
+      this.show = false;
+    } else {
+      this.show = true;
+    }
+    console.log(this.show);
+  }
 
 }
