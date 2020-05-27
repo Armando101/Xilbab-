@@ -43,6 +43,8 @@ export class CamasService {
 		if (this.searchCamas.length==0) {
 			return this.totalCamas;
 		}
+		// data.getCountrys[0].restrictions[0].description
+		console.log(this.searchCamas);
 		return this.searchCamas;
 	}
 }

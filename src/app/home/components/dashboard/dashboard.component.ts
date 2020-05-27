@@ -72,6 +72,9 @@ export class DashboardComponent implements OnInit {
           getCountrys{
             code
             bedsTotal 
+            restrictions{
+             description
+            }
           }
         }
       `,
@@ -80,6 +83,9 @@ export class DashboardComponent implements OnInit {
       this._camasService.setCamas2(data.getCountrys);
       // console.log(data);
       this.camas = this._camasService.getCamas();
+      // console.log(data.getCountrys[0].restrictions[0].description);
+      // this._medidasService.setMedidas2(data.getCountrys.restrictions);
+      //this.medidas = this._medidasService.getMedidas();
      });
     /*
     */

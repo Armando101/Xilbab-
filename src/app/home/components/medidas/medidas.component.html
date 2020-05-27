@@ -1,6 +1,7 @@
 <div class="Medidas">
 	<div class="medidas__container" *ngFor="let medida of medidas">
-		<span class="medidas__country">{{medida.code_country}}</span>
-		<span class="medidas__amount">{{medida.measure}}</span>
+		<!-- <h1 *ngIf="medidas.length > 49">Hola{{medidas.length}}</h1> -->
+		<span *ngIf= "medida.restrictions.length==0" class="medidas__country">No hay medidas registradas</span>
+		<span *ngIf="medida.restrictions[0]" class="medidas__country">{{medida.restrictions[0].description}}</span>
 	</div>
 </div>

@@ -3,7 +3,8 @@
 		<h2>{{ ( cama.code | uppercase ) | codeCountry }}</h2>
 		<span>{{cama.bedsTotal| number:'1.0-2'}} camas</span>
 		<h2>Medidas</h2>
-		{{medidas[0].measure}}
+		<span *ngIf= "cama.restrictions.length==0">No hay medidas registradas</span>
+		<span *ngIf="cama.restrictions[0]">{{cama.restrictions[0].description}}</span>
 		<hr>
 	</div>
 </div>
