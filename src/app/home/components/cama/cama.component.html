@@ -1,0 +1,6 @@
+<i (click)= "overlay()" class="icon-info burger-button burguer-button--show" id = "burger-menu"></i>
+<span class="camas__country" >{{ (information.code | uppercase ) | codeCountry }}</span>
+<span class="camas__amount">{{information.bedsTotal | number:'1.0-2'}}</span>
+<div *ngIf="showOverlay">
+	<app-overlay [information]="information"></app-overlay>
+</div>

@@ -10,9 +10,10 @@ import { MedidasCamasComponent } from './components/medidas-camas/medidas-camas.
 import { CodeCountryPipe } from './pipe/code-country.pipe';
 import { OverlayComponent } from './components/overlay/overlay.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { CamaComponent } from './components/cama/cama.component';
 
 @NgModule({
-  declarations: [DashboardComponent, CamasComponent, MedidasComponent, MedidasCamasComponent, CodeCountryPipe, OverlayComponent, LoadingComponent],
+  declarations: [DashboardComponent, CamasComponent, MedidasComponent, MedidasCamasComponent, CodeCountryPipe, OverlayComponent, LoadingComponent, CamaComponent],
   imports: [
     CommonModule, HomeRoutingModule, SharedModule
   ],

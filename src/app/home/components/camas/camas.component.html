@@ -1,10 +1,5 @@
 <div class="Camas">
-	<div  class="camas__container" *ngFor="let cama of camas">
-		<i (click)= "overlay()" class="icon-info burger-button burguer-button--show" id = "burger-menu"></i>
-		<span class="camas__country" >{{ (cama.code | uppercase ) | codeCountry }}</span>
-		<span class="camas__amount">{{cama.bedsTotal | number:'1.0-2'}}</span>
-		<div *ngIf="showOverlay">
-			<app-overlay [information]="cama"></app-overlay>
-		</div>
+	<div  class="camas__container" *ngFor="let information of camas">
+		<app-cama [information]="information"></app-cama>
 	</div>
 </div>
