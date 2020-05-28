@@ -2,6 +2,9 @@
 	<div class="notFoundMessage" *ngIf="notFoundMessage">
 		<p>País no encontrado</p>
 	</div>
+	<div *ngIf="camas.length == 0" class="loading">
+		<app-loading></app-loading>
+	</div>
 	<div class="dashboard__cards camas" [ngClass] = "{'highlight-cards': !highlight_camas }">
 		<h2>Disponibliidad de camas</h2>
 		<hr>
@@ -14,7 +17,7 @@
 		<br>
 		<app-medidas [medidas]="camas"></app-medidas>
 	</div>
-	<div class="dashboard__cards--medidas_camas">
+	<div *ngIf="camas.length > 0" class="dashboard__cards--medidas_camas">
 		<app-medidas-camas [medidas]="camas" [camas]="camas"></app-medidas-camas>
 	</div>
 </div>
