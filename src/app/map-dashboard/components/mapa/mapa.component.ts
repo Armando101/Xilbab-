@@ -67,6 +67,9 @@ export class MapaComponent implements OnInit {
 				    populationAverage
 				    estimatedBedsTotal
 				    estimatedBedsAverage
+            restrictions{
+             description
+            }
           }
         }
       `,

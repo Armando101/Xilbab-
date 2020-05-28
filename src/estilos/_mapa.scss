@@ -7,6 +7,8 @@
     url('./estilos/fonts/icomoon.svg?wjuw8u#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
+
 }
 
 body {
@@ -51,8 +53,8 @@ google-map {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-menu:before {
-  content: "\e904";
+.icon-info:before {
+  content: "\ea0c";
 }
 
 .burger-button {
@@ -79,6 +81,13 @@ google-map {
   cursor: pointer;
 }
 
+.burguer-button--show {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  left: 0px;
+  top: 0px;
+}
 
 @media screen and (max-width: 850px) {
 	.mapa-container {

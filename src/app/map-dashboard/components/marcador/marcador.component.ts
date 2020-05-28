@@ -12,6 +12,13 @@ export class MarcadorComponent implements OnInit {
 
 	@Input() markerPositions: any;
 
+  public markerOptions = {
+    icon: {
+      url: "../../../../assets/skull.png",
+      scaledSize: new google.maps.Size(25, 25)
+    }
+  }
+
   constructor(
   	private _informationService: InformationService
   ) { }

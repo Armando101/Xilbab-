@@ -1,7 +1,7 @@
 <div class="sidebar__content" *ngIf="code">
 
 	<h1>{{ (code | uppercase) | codeCountry }}</h1>
-	
+	<p>Se muestra el número de camas disponibles en los hospitales ante la pandemia del COVID-19</p>
 	<div class="sidebar__content__main">
 		<p><span>Población:</span> {{ populationAverage | number:'1.0-2' }} </p>
 		<p><span>Total de camas:</span> {{ bedsTotal | number:'1.0-2' }} </p>
@@ -10,7 +10,12 @@
 		<p><span>Promedio de camas:</span> {{ bedsAverage | number:'1.0-2' }} </p>
 		<p><span>Total de camas estimadas:</span> {{ estimatedBedsTotal | number:'1.0-2' }} </p> 
 		<p><span>Promedio de camas estimadas:</span> {{ estimatedBedsAverage | number:'1.0-2' }} </p>
-	</div>	
+	</div>
+	<div class="sidebar__content__main">
+		<h2>Medidas tomadas</h2>
+		<p *ngIf= "medidas.length==0">No hay medidas registradas</p>
+		<p *ngIf="medidas.length > 0">{{medidas[0].description}}</p>
+	</div>
 </div>
 
 <div class="sidebar__content" *ngIf="!code">

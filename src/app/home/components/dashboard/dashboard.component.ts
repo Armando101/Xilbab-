@@ -71,7 +71,11 @@ export class DashboardComponent implements OnInit {
         {
           getCountrys{
             code
-            bedsTotal 
+            bedsTotal
+            bedsAverage
+            populationAverage
+            estimatedBedsTotal
+            estimatedBedsAverage
             restrictions{
              description
             }

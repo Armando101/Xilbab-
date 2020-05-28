@@ -14,6 +14,7 @@ export class SidebarComponent implements OnInit {
 	public bedsAverage: number;
 	public estimatedBedsTotal: number;
 	public estimatedBedsAverage: number;
+  public medidas: any[];
 
   constructor(
   	private _informationService: InformationService
@@ -25,6 +26,8 @@ export class SidebarComponent implements OnInit {
 			this.bedsAverage= response.bedsAverage;
 			this.estimatedBedsTotal= response.estimatedBedsTotal;
 			this.estimatedBedsAverage= response.estimatedBedsAverage;
+      this.medidas = response.restrictions;
+      // console.log(this.medidas);
   		console.log('Desde el sidebar: ', response);
   	});
   }
