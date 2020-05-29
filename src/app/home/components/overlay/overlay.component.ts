@@ -20,14 +20,15 @@ export class OverlayComponent implements OnInit {
   ngOnInit(): void {
   	this._hideOverlayService.getObservable()
     .subscribe(response => {
-    	console.log(response);
-      this.showOverlay = response;
+      if (response.country == this.information.code) {
+      	//console.log(response);
+        this.showOverlay = response.status;
+      }
     });
-    console.log(this.information);
   }
 
   hide() {
-  	this._hideOverlayService.enviarData(false);
+  	this._hideOverlayService.enviarData({"country": this.information.code, "status": false});
   }
 
 }

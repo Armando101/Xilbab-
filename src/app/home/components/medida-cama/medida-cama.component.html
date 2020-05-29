@@ -1,0 +1,9 @@
+<i (click)= "overlay()" class="icon-info burger-button burguer-button--show" id = "burger-menu"></i>
+<h2>{{ ( information.code | uppercase ) | codeCountry }}</h2>
+<span>{{information.bedsTotal| number:'1.0-2'}} camas</span>
+<h2>Medidas</h2>
+<span *ngIf= "information.restrictions.length==0">No hay medidas registradas</span>
+<span *ngIf="information.restrictions[0]">{{information.restrictions[0].description}}</span>
+<div *ngIf="showOverlay">
+	<app-overlay [information]="information"></app-overlay>
+</div>

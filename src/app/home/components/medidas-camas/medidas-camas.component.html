@@ -1,14 +1,5 @@
 <div class="Medidas">
-	<div class="medidas-camas" *ngFor="let cama of camas">
-		<i (click)= "overlay()" class="icon-info burger-button burguer-button--show" id = "burger-menu"></i>
-		<h2>{{ ( cama.code | uppercase ) | codeCountry }}</h2>
-		<span>{{cama.bedsTotal| number:'1.0-2'}} camas</span>
-		<h2>Medidas</h2>
-		<span *ngIf= "cama.restrictions.length==0">No hay medidas registradas</span>
-		<span *ngIf="cama.restrictions[0]">{{cama.restrictions[0].description}}</span>
-		<div *ngIf="showOverlay">
-			<app-overlay [information]="cama"></app-overlay>
-		</div>
-		<hr>
+	<div class="medidas-camas" *ngFor="let information of camas">
+		<app-medida-cama [information]="information"></app-medida-cama>
 	</div>
 </div>

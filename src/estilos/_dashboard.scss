@@ -22,8 +22,6 @@
 }
 
 .camas__container {
-	display: grid;
-	grid-template-columns: 10% 45% 45%;
 	height: 50px;
 	border-bottom: 1px solid $primary_brand;
 }
@@ -50,6 +48,11 @@
 
 .medidas {
 	grid-area: card-measure;
+}
+
+app-cama {
+	display: grid;
+	grid-template-columns: 10% 45% 45%;
 }
 
 .notFoundMessage {

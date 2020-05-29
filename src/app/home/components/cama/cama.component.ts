@@ -17,18 +17,16 @@ export class CamaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-  	this._hideOverlayService.getObservable()
-    .subscribe(response => {
-      console.log(response);
-      this.showOverlay = response.status;
-    });
+  
   }
 
   overlay() {
   	if (this.showOverlay) {	
-  		this._hideOverlayService.enviarData({country: this.information.code, status: false});
+  		this.showOverlay = false;
+  		this._hideOverlayService.enviarData({"country": this.information.code, "status": false});
   	} else {
-  		this._hideOverlayService.enviarData({country: this.information.code, status: false});
+  		this.showOverlay = true;
+  		this._hideOverlayService.enviarData({"country": this.information.code, "status": true});
   	}
   }
 

@@ -86,7 +86,7 @@ google-map {
   position: relative;
   justify-content: center;
   left: 0px;
-  top: 0px;
+  top: 5px;
 }
 
 @media screen and (max-width: 850px) {
@@ -108,7 +108,8 @@ google-map {
 	}
 
 	.sidebar__content__main {
-		display: flex;
+		display: grid;
+    grid-template-columns: 100%;
 	}
 
 	.sidebar__content__main p {
@@ -126,4 +127,8 @@ google-map {
 	.burger-button {
     	display: block;
   	}
+
+  .burguer-button--show {
+    top: 10px;
+  }
 }

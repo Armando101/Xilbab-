@@ -10,7 +10,7 @@ export class HideOverlayService {
 
 
 
-	public hideOverlayService$ = new BehaviorSubject<ObjectOverlay>({country: 'ad', status: false});
+	public hideOverlayService$ = new BehaviorSubject<ObjectOverlay>({"country": 'ad', "status": false});
 	
 	getObservable() {
 		return this.hideOverlayService$.asObservable();
