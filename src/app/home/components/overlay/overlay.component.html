@@ -1,5 +1,5 @@
 <div class="camas__overlay" [ngClass]="{'show__overlay': showOverlay}">
-  <div class="overlay active" id="overlay">
+  <div class="overlay active back" id="overlay">
     <div class="modal" id="modal">
       
       <div (click)="hide()" class="close" id="close">
@@ -21,9 +21,19 @@
       <div class="overlay__content__main">
         <h2>Measures taken</h2>
         <p *ngIf= "information.restrictions.length==0">No measure registered</p>
-        <p *ngIf="information.restrictions.length > 0">{{information.restrictions[0].description}}</p>
+        
+        <div class="showMeauses" *ngIf= "information.restrictions.length>0">        
+          <i (click)= "more()" class="icon-info burger-button burguer-button--show" id = "burger-menu"></i>
+          <p *ngIf="!showMore"> <span class="note">{{information.restrictions[0].dateStart}}</span> {{information.restrictions[0].description}}</p>
+          <div class="measure" *ngIf="showMore">
+            <div *ngFor="let measure of information.restrictions">
+              <p><span class="note">{{measure.dateStart}}</span> {{measure.description}}</p>
+            </div>
+          </div>
+        </div>
+      
       </div>
-    <p>Availability of beds per 1000 inhabitants</p>
+      <p class="note">*Availability of beds per 1000 inhabitants</p>
     </div>
   </div>
 </div>

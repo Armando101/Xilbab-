@@ -59,6 +59,11 @@
 	transition: background 300ms;
 }
 
+.bio__content a {
+	font-size: 140%;
+	margin-right: 20px;
+}
+
 .bio__content a:hover, .credits h2 a:hover {
 	background-color:  #012179;
 	color: white;

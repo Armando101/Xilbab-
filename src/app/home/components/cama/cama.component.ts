@@ -17,7 +17,13 @@ export class CamaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-  
+    this._hideOverlayService.getObservable()
+    .subscribe(response => {
+      if (response.country == this.information.code) {
+        // console.log(this.information);
+        this.showOverlay = response.status;
+      }
+    });
   }
 
   overlay() {

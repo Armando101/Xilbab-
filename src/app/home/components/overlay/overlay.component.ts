@@ -10,6 +10,7 @@ import { Camas } from '../../models/camas';
 export class OverlayComponent implements OnInit {
 
 	@Input() information;
+  public showMore: boolean = false;
 
 	public showOverlay:boolean = false;
 
@@ -21,7 +22,7 @@ export class OverlayComponent implements OnInit {
   	this._hideOverlayService.getObservable()
     .subscribe(response => {
       if (response.country == this.information.code) {
-      	//console.log(response);
+      	// console.log(this.information);
         this.showOverlay = response.status;
       }
     });
@@ -29,6 +30,14 @@ export class OverlayComponent implements OnInit {
 
   hide() {
   	this._hideOverlayService.enviarData({"country": this.information.code, "status": false});
+  }
+
+  more() {
+    if (this.showMore) {
+      this.showMore = false;
+    } else {
+      this.showMore = true;
+    }
   }
 
 }

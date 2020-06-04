@@ -78,6 +78,7 @@ export class DashboardComponent implements OnInit {
             estimatedBedsAverage
             restrictions{
              description
+             dateStart
             }
           }
         }
