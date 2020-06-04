@@ -1,23 +1,23 @@
 <div class="sidebar__content" *ngIf="code">
 
 	<h1>{{ (code | uppercase) | codeCountry }}</h1>
-	<p>Se muestra el número de camas disponibles en los hospitales ante la pandemia del COVID-19</p>
+	<p>Showing the number of beds available in hospitals in the face of the COVID-19 pandemic.</p>
 	<div class="sidebar__content__main">
-		<p><span>Población:</span> {{ populationAverage | number:'1.0-2' }} </p>
-		<p><span>Total de camas:</span> {{ bedsTotal | number:'1.0-2' }} </p>
+		<p><span>Population:</span> {{ populationAverage | number:'1.0-2' }} </p>
+		<p><span>Total beds:</span> {{ bedsTotal | number:'1.0-2' }} </p>
 	</div>
 	<div class="sidebar__content__main">
-		<p><span>Promedio de camas:</span> {{ bedsAverage | number:'1.0-2' }} </p>
-		<p><span>Total de camas estimadas:</span> {{ estimatedBedsTotal | number:'1.0-2' }} </p> 
-		<p><span>Promedio de camas estimadas:</span> {{ estimatedBedsAverage | number:'1.0-2' }} </p>
+		<p><span>Avarage beds:</span> {{ bedsAverage | number:'1.0-2' }} </p>
+		<p><span>Total estimated beds:</span> {{ estimatedBedsTotal | number:'1.0-2' }} </p> 
+		<p><span>Avarage estimated beds:</span> {{ estimatedBedsAverage | number:'1.0-2' }} </p>
 	</div>
 	<div class="sidebar__content__main">
-		<h2>Medidas tomadas</h2>
-		<p *ngIf= "medidas.length==0">No hay medidas registradas</p>
+		<h2>Measures taken</h2>
+		<p *ngIf= "medidas.length==0">No measure registered</p>
 		<p *ngIf="medidas.length > 0">{{medidas[0].description}}</p>
 	</div>
 </div>
 
 <div class="sidebar__content" *ngIf="!code">
-	<h1>Seleccione un país</h1>
+	<h1>Select a country</h1>
 </div>
