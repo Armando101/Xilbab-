@@ -23,7 +23,8 @@
         <p *ngIf= "information.restrictions.length==0">No measure registered</p>
         
         <div class="showMeauses" *ngIf= "information.restrictions.length>0">        
-          <i (click)= "more()" class="icon-info burger-button burguer-button--show" id = "burger-menu"></i>
+          <i (click)= "more()" *ngIf="!showMore" class="icon-plus burger-button burguer-button--show" id = "burger-menu"></i>
+          <i (click)= "more()" *ngIf="showMore" class="icon-minus burger-button burguer-button--show" id = "burger-menu"></i>
           <p *ngIf="!showMore"> <span class="note">{{information.restrictions[0].dateStart}}</span> {{information.restrictions[0].description}}</p>
           <div class="measure" *ngIf="showMore">
             <div *ngFor="let measure of information.restrictions">

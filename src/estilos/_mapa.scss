@@ -2,7 +2,7 @@
   font-family: 'icomoon';
   src:  url('./estilos/fonts/icomoon.eot?wjuw8u');
   src:  url('./estilos/fonts/icomoon.eot?wjuw8u#iefix') format('embedded-opentype'),
-    url('./estilos/fonts/icomoon.ttf?wjuw8u') format('truetype'),
+    /*url('./estilos/fonts/icomoon.ttf?wjuw8u') format('truetype'),*/
     url('./estilos/fonts/icomoon.woff?wjuw8u') format('woff'),
     url('./estilos/fonts/icomoon.svg?wjuw8u#icomoon') format('svg');
   font-weight: normal;
@@ -55,6 +55,14 @@ google-map {
 
 .icon-info:before {
   content: "\ea0c";
+}
+
+.icon-plus:before {
+  content: "\ea0a";
+}
+
+.icon-minus:before {
+  content: "\ea0b";
 }
 
 .burger-button {

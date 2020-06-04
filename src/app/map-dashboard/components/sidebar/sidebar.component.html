@@ -14,7 +14,14 @@
 	<div class="sidebar__content__main">
 		<h2>Measures taken</h2>
 		<p *ngIf= "medidas.length==0">No measure registered</p>
-		<p *ngIf="medidas.length > 0">{{medidas[0].description}}</p>
+		<div  *ngIf="medidas.length > 0" class="sidebar__measures">
+			<p>{{medidas[0].description}}</p>
+		</div>
+<!-- 		<div  *ngIf="medidas.length > 0" class="sidebar__measures">
+	<div *ngFor="let medida of medidas" class="">
+		<p>{{medida.description}}</p>
+	</div>
+</div> -->
 	</div>
 </div>
 
