@@ -12,6 +12,7 @@ const routes: Routes = [
     ]
   },
   { path: 'mapa', loadChildren: () => import('./map-dashboard/map-dashboard.module').then(m => m.MapDashboardModule) },
+  { path: 'about-us', loadChildren: () => import('./about-us/about-us.module').then(m => m.AboutUsModule) },
   { path: '**', component: PageNotFoundComponent }
 ];
 
