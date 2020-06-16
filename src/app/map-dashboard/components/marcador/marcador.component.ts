@@ -14,8 +14,8 @@ export class MarcadorComponent implements OnInit {
 
   public markerOptions = {
     icon: {
-      url: "../../../../assets/skull.png",
-      scaledSize: new google.maps.Size(25, 25)
+      url: "assets/location.png",
+      scaledSize: new google.maps.Size(25, 25),
     }
   }
 

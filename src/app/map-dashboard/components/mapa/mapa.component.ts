@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 
+import { StylesService } from './MapsStyles/Styles';
+
 @Component({
   selector: 'app-mapa',
   templateUrl: './mapa.component.html',
@@ -25,31 +27,12 @@ export class MapaComponent implements OnInit {
 
   public options = {
   	zoom:3,
-  	styles: [
-  {
-    "featureType": "all",
-    "stylers": [
-      { "color": "#C0C0C0" }
-    ]
-  },{
-    "featureType": "road.arterial",
-    "elementType": "geometry",
-    "stylers": [
-      { "color": "#CCFFFF" }
-    ]
-  },{
-    "featureType": "landscape",
-    "elementType": "labels",
-    "stylers": [
-      { "visibility": "off" }
-    ]
-  }
-]
-
+  	styles: this._stylesService.getBlueStyle()
   }
 
   constructor(
-  	private _apollo: Apollo
+  	private _apollo: Apollo,
+    private _stylesService: StylesService
   ) { 
   }
 
