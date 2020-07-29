@@ -86,7 +86,7 @@ export class DashboardComponent implements OnInit {
     })
     .valueChanges.subscribe(({data}) => {
       this._camasService.setCamas2(data.getCountrys);
-      // console.log(data);
+      console.log(data);
       this.camas = this._camasService.getCamas();
       // console.log(data.getCountrys[0].restrictions[0].description);
       // this._medidasService.setMedidas2(data.getCountrys.restrictions);
